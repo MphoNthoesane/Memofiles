@@ -1,0 +1,2519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeronautical Information Management</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="manager.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+</style>
+</head>
+<body>
+    <div class="login-container" id="login-container">
+        <div class="login-form">
+            <h4>ATNS</h4>
+            <span>Aeronautical Information Management<span>
+                <br>
+            <span id="reject"></span>
+            <div class="input-group">
+                <label for="username">Employee number</label>
+                <input type="text" id="employee" name="username" placeholder="Enter your employee number" required maxlength="5">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-button" id="login">Login</button>
+
+            
+            
+        </div>
+    </div>
+
+    <div class="main-window" id="main_window">
+
+
+    <h1>ATNS</h1>
+    <h2>Aeronautical Information Management</h2>
+    <h3 id="incharge"></h3>
+
+    <div class="profile">
+       <span>Name: <span id="employee-name"></span><br></span> 
+        <span>Employee No: <span id="employee-number"></span><br></span>
+    </div>
+    
+     <!--choosing documents-->
+     <div class="back-btn" id="back-btn">Back</div>
+    <div class="choose-flight" id="choose-flight">
+        <h3>Flight Planning</h3>
+        
+        <div class="btns">
+            <button type="button" class="btn" id="sign_memo">Sign a memo</button>
+           <button type="button" class="btn" id="add_new_memo">Add Memo</button>
+            
+        </div>
+
+        <div class="btns">
+           <a href="briefcheck.html"><button type="button" class="btn">Memo files</button></a>
+            <button type="button" class="btn">Report</button>
+        </div>
+    </div>
+
+     <div class="choose-notam" id="choose-notam">
+        <h3>NOTAM and Dynamic</h3>
+        
+        <div class="btns">
+            <button type="button" class="btn">Sign a memo</button>
+            <button type="button" class="btn">Add Memo</button>
+            
+        </div>
+
+        <div class="btns">
+          <button type="button" class="btn">Memo files</button>
+            <button type="button" class="btn">Report</button>
+        </div>
+    </div>
+
+
+     <div class="choose-atn" id="choose-atn">
+        <h3>ATN</h3>
+        
+        <div class="btns">
+            <button type="button" class="btn">Sign a memo</button>
+            <button type="button" class="btn">Add Memo</button>
+            
+        </div>
+
+        <div class="btns">
+           <button type="button" class="btn">Memo files</button>
+            <button type="button" class="btn">Report</button>
+        </div>
+    </div>
+
+    <!--Shifts-->
+    <div class="adding-shifts" id="adding-shifts">
+        <h3>Add the shifts</h3>
+        <div class="input-shifts">
+            <input type="text" name="" id="text_shift" placeholder="Enter the shift and day" class="input-space">
+            &nbsp;&nbsp;
+            <button id="shift_addBtn" class="shift_addBtn">Add shift</button>
+        </div>
+        
+        
+         
+    </div>
+
+    <div class="check-shifts" id="check-shifts">
+        <h3>Shifts available</h3>
+        <ul id="shift_List">
+                
+            </ul>
+    </div>
+
+    <!--Announcements-->
+    <div class="type-of-announcements" id="type-of-announcements">
+        <div class="btns">
+           <button type="button" class="btn">Urgent announcements</button>
+        <button type="button" class="btn">General announcements</button>
+            
+        </div>
+        <div class="btns">
+           <button type="button" class="btn">Reminders</button>
+        </div>
+        </div>
+
+        <!--Sign for today-->
+        
+        
+
+
+    <div class="container" id="container">
+
+
+       
+
+
+        <div class="side-menu">
+            
+            <div class="menu-item active" data-target="info-section-1">
+                Memo Files
+            </div>
+            <div class="menu-item" data-target="info-section-2">
+                Meetings
+            </div>
+            <div class="menu-item" data-target="info-section-3">
+                Occurence log
+            </div>
+            <div class="menu-item" data-target="info-section-4">
+                Reports
+            </div>
+
+            <div class="menu-item" data-target="info-section-5">
+                Training
+            </div>
+
+            <div class="menu-item" data-target="info-section-6">
+                Shift cover
+            </div>
+
+            <div class="menu-item" data-target="info-section-7">
+                Announcements
+            </div>
+
+            <div class="menu-item" data-target="info-section-8">
+                Notifications
+            </div>
+
+             <div class="menu-item" data-target="info-section-9">
+                Messages
+            </div>
+
+             <div class="menu-item" data-target="info-section-10">
+                Resources
+            </div>
+
+             <div class="menu-item" data-target="info-section-11">
+                Group chat
+            </div>
+
+             <div class="menu-item" data-target="info-section-12">
+                Files
+            </div>
+
+             <div class="menu-item" data-target="info-section-13">
+                Log out 
+            </div>
+        </div>
+
+        <div class="content-display">
+            
+            <div id="info-section-1" class="content-block visible">
+                
+                    <div class="btns">
+                        <button type="button" class="btn" id="flight">Flight Planning</button>
+                        <button type="button" class="btn" id="notam">NOTAM and Dynamic</button>
+                    </div>
+                
+                <div class="btns">
+                        <button type="button" class="btn" id="atn">ATN</button>
+                        <a href="Old Memo File.pdf"><button type="button" class="btn">Old Memo</button></a>
+                    </div>
+                
+
+            </div>
+
+            <div id="info-section-2" class="content-block">
+                <div class="select-meetings">
+                    <div class="btns">
+                        <button type="button" class="btn">Check meetings</button>
+                        <button type="button" class="btn">Attendance</button>
+                    </div>
+                    <div class="btns">
+                        <button type="button" class="btn">Add minutes</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="info-section-3" class="content-block">
+                <div class="select-occurence">
+                    
+             <div class="btns">
+                        <button type="button" class="btn">Flight planning</button>
+                        <button type="button" class="btn">NOTAM</button>
+                    </div>
+
+                    <div class="btns">
+                        <button type="button" class="btn">ATN</button>
+                        
+                    </div>
+        </div>
+                
+            </div>
+
+            <div id="info-section-4" class="content-block">
+                <div class="select-report">
+                <div class="btns">
+                    <button type="button" class="btn">Training</button>
+                    <button type="button" class="btn">Memo signatures</button>
+                </div>
+
+                <div class="btns">
+                    <button type="button" class="btn">Proficiencies</button>
+                    <button type="button" class="btn">Employee progress</button>
+                </div>
+
+                </div>
+            </div>
+
+            <div id="info-section-5" class="content-block">
+                <div class="select-training">
+                <div class="btns">
+                    <button type="button" class="btn">Flight Planning</button>
+                    <button type="button" class="btn">NOTAM</button>
+                </div>
+
+                <div class="btns">
+                    <button type="button" class="btn">Dynamic</button>
+                    <button type="button" class="btn">ATN</button>
+                </div>
+
+                </div>
+            </div>
+
+
+             <div id="info-section-6" class="content-block">
+                <div class="select-shift">
+                <div class="btns">
+                    <button type="button" class="btn" id="shifts_available">Shifts available</button>
+                    <button type="button" class="btn" id="shifts_add">Add shifts</button>
+                </div>
+
+                
+
+                </div>
+            </div>
+
+
+
+
+
+             <div id="info-section-7" class="content-block">
+                <div class="select-announcement">
+                <div class="btns">
+                    <button type="button" class="btn" id="read-announcements">Read announcements</button>
+                    <button type="button" class="btn">Send a text announcement</button>
+                </div>
+
+                <div class="btns">
+                    <button type="button" class="btn">Send a file announcement</button>
+                   
+                </div>
+
+                </div>
+            </div>
+
+            <div id="info-section-8" class="content-block">
+                <div class="select-notification">
+                    <h3>Notifications</h3>
+                    <div class="btns">
+                        <button type="button" class="btn">Refresh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="info-section-9" class="content-block">
+                <div class="select-employees">
+                    <div class="btns">
+                        <button type="button" class="btn">Check messages</button>
+                       <button type="button" class="btn">Send a message</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="info-section-10" class="content-block">
+                <div class="select-resources">
+                    <div class="btns">
+                        <button type="button" class="btn">Internal</button>
+                        <button type="button" class="btn">External</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div id="info-section-11" class="content-block">
+                <div class="select-group-chat">
+                    <div class="btns">
+                        <button type="button" class="btn">Access the group chat</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="info-section-12" class="content-block">
+                <div class="select-files">
+                    <div class="btns">
+                        <button type="button" class="btn">Files</button>
+                        <button type="button" class="btn">Add file</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="info-section-13" class="content-block">
+                <div class="select-log-out">
+                    <div class="btns">
+                        <h4 style="text-align: center;font-size: 50px;">Do you want to log out?</h4>
+                    </div>
+
+                    <div class="btns">
+                        <a href="https://aimojohannesburg.co.za"><button type="button" class="btn" style="height: 40px;">YES</button></a>
+                       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    <div class="container_sign" id="container_sign">
+
+         <h3>Sign below</h3>
+
+         <div class="memo-details">
+            <span>Memo Title : 
+                <span id="memo-tile"></span>
+            </span>
+
+             <span>Memo File : 
+                <span id="memo-file"></span>
+            </span>
+         </div>
+             <table border="solid" style="margin: 0 auto;">
+        <th style="width: 50px;">No: </th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Enter password and sign</th>
+        <th>Signature</th>
+<tr>
+           
+
+    <tr>
+            <td style="width: 50px;">1</td>
+            <td>SUKDEV MAHENDRA </td>
+            <td><span id="SUKDEVDate"></span></td>
+            <td id="SUKDEVDone"><input type="password" name="" id="SUKDEVPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SUKDEVButton">Sign</button></td>
+            <td id="SUKDEVSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">2</td>
+            <td>MPHO MCDON MOETI </td>
+            <td><span id="MOETIDate"></span></td>
+            <td id="MOETIDone"><input type="password" name="" id="MOETIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOETIButton">Sign</button></td>
+            <td id="MOETISign"></td>
+        
+        
+        </tr>
+        <tr>
+            <td style="width: 50px;">3</td>
+            <td>LETHOBA, BENNIE</td>
+            <td><span id="LETHOBADate"></span></td>
+            <td id="LETHOBADone"><input type="password" name="" id="LETHOBAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="LETHOBAButton">Sign</button></td>
+            <td id="LETHOBASign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">4</td>
+            <td>DISEMELO MOLUPE</td>
+            <td><span id="DISEMELODate"></span></td>
+            <td id="DISEMELODone"><input type="password" name="" id="DISEMELOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="DISEMELOButton">Sign</button></td>
+            <td id="DISEMELOSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">5</td>
+            <td>FAITH MASHEGO </td>
+            <td><span id="MASHEGODate"></span></td>
+            <td id="MASHEGODone"><input type="password" name="" id="MASHEGOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MASHEGOButton">Sign</button></td>
+            <td id="MASHEGOSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">6</td>
+            <td> ITUMELENG MATLHAKE</td>
+            <td><span id="MATLHAKEDate"></span></td>
+            <td id="MATLHAKEDone"><input type="password" name="" id="MATLHAKEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MATLHAKEButton">Sign</button></td>
+            <td id="MATLHAKESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">7</td>
+            <td> JABULILE MLAKA</td>
+            <td><span id="MLAKADate"></span></td>
+            <td id="MLAKADone"><input type="password" name="" id="MLAKAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MLAKAButton">Sign</button></td>
+            <td id="MLAKASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">8</td>
+            <td> JABULANI MEKGWE</td>
+            <td><span id="MEKGWEDate"></span></td>
+            <td id="MEKGWEDone"><input type="password" name="" id="MEKGWEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MEKGWEButton">Sign</button></td>
+            <td id="MEKGWESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">9</td>
+            <td> JIM MABUSO</td>
+            <td><span id="MABUSODate"></span></td>
+            <td id="MABUSODone"><input type="password" name="" id="MABUSOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABUSOButton">Sign</button></td>
+            <td id="MABUSOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">10</td>
+            <td> KAMOGELO MABENA</td>
+            <td><span id="MABENADate"></span></td>
+            <td id="MABENADone"><input type="password" name="" id="MABENAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABENAButton">Sign</button></td>
+            <td id="MABENASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">11</td>
+            <td> MAKGABO MATSHA</td>
+            <td><span id="MATSHADate"></span></td>
+            <td id="MATSHADone"><input type="password" name="" id="MATSHAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MATSHAButton">Sign</button></td>
+            <td id="MATSHASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">12</td>
+            <td> MARITO NGOBENI </td>
+            <td><span id="NGOBENIDate"></span></td>
+            <td id="NGOBENIDone"><input type="password" name="" id="NGOBENIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NGOBENIButton">Sign</button></td>
+            <td id="NGOBENISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">13</td>
+            <td> MOKGADI MOTSEPE</td>
+            <td><span id="MOTSEPEDate"></span></td>
+            <td id="MOTSEPEDone"><input type="password" name="" id="MOTSEPEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOTSEPEButton">Sign</button></td>
+            <td id="MOTSEPESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">14</td>
+            <td> PRUDENCE MUVHALI </td>
+            <td><span id="MUVHALIDate"></span></td>
+            <td id="MUVHALIDone"><input type="password" name="" id="MUVHALIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MUVHALIButton">Sign</button></td>
+            <td id="MUVHALISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">15</td>
+            <td> WESTLEY BURTON</td>
+            <td><span id="BURTONDate"></span></td>
+            <td id="BURTONDone"><input type="password" name="" id="BURTONPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="BURTONButton">Sign</button></td>
+            <td id="BURTONSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">16</td>
+            <td>  YANGA NOFUMA</td>
+            <td><span id="NOFUMADate"></span></td>
+            <td id="NOFUMADone"><input type="password" name="" id="NOFUMAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NOFUMAButton">Sign</button></td>
+            <td id="NOFUMASign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">17</td>
+            <td>  ZANDILE MHLONGO</td>
+            <td><span id="MHLONGODate"></span></td>
+            <td id="MHLONGODone"><input type="password" name="" id="MHLONGOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MHLONGOButton">Sign</button></td>
+            <td id="MHLONGOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">18</td>
+            <td> CHULUMANCO DALI</td>
+            <td><span id="DALIDate"></span></td>
+            <td id="DALIDone"><input type="password" name="" id="DALIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="DALIButton">Sign</button></td>
+            <td id="DALISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">19</td>
+            <td> CLYVE CHABA</td>
+            <td><span id="CHABADate"></span></td>
+            <td id="CHABADone"><input type="password" name="" id="CHABAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="CHABAButton">Sign</button></td>
+            <td id="CHABASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">20</td>
+            <td>EDWIN NEVARI </td>
+            <td><span id="NEVARIDate"></span></td>
+            <td id="NEVARIDone"><input type="password" name="" id="NEVARIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NEVARIButton">Sign</button></td>
+            <td id="NEVARISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">21</td>
+            <td> GEORGE HOWARTH</td>
+            <td><span id="HOWARTHDate"></span></td>
+            <td id="HOWARTHDone"><input type="password" name="" id="HOWARTHPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="HOWARTHButton">Sign</button></td>
+            <td id="HOWARTHSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">22</td>
+            <td> MASERULE MORERWA</td>
+            <td><span id="MORERWADate"></span></td>
+            <td id="MORERWADone"><input type="password" name="" id="MORERWAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MORERWAButton">Sign</button></td>
+            <td id="MORERWASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">23</td>
+            <td> MURENDI MADZINGE </td>
+            <td><span id="MADZINGEDate"></span></td>
+            <td id="MADZINGEDone"><input type="password" name="" id="MADZINGEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MADZINGEButton">Sign</button></td>
+            <td id="MADZINGESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">24</td>
+            <td> PHALATENA MADIHLABA</td>
+            <td><span id="MADIHLABADate"></span></td>
+            <td id="MADIHLABADone"><input type="password" name="" id="MADIHLABAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MADIHLABAButton">Sign</button></td>
+            <td id="MADIHLABASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">25</td>
+            <td> THABISO MOTHIBE</td>
+            <td><span id="MOTHIBEDate"></span></td>
+            <td id="MOTHIBEDone"><input type="password" name="" id="MOTHIBEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOTHIBEButton">Sign</button></td>
+            <td id="MOTHIBESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">26</td>
+            <td> EDITH NKOSI  </td>
+            <td><span id="EDITHDate"></span></td>
+            <td id="EDITHDone"><input type="password" name="" id="EDITHPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="EDITHButton">Sign</button></td>
+            <td id="EDITHSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">27</td>
+            <td>NDIVHUWO MUHANELWA</td>
+            <td><span id="MUHANELWADate"></span></td>
+            <td id="MUHANELWADone"><input type="password" name="" id="MUHANELWAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MUHANELWAButton">Sign</button></td>
+            <td id="MUHANELWASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">28</td>
+            <td>  NISHAAT KRUGER</td>
+            <td><span id="KRUGERDate"></span></td>
+            <td id="KRUGERDone"><input type="password" name="" id="KRUGERPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="KRUGERButton">Sign</button></td>
+            <td id="KRUGERSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">29</td>
+            <td>  TSHIKANI SHIBURI </td>
+            <td><span id="SHIBURIDate"></span></td>
+            <td id="SHIBURIDone"><input type="password" name="" id="SHIBURIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SHIBURIButton">Sign</button></td>
+            <td id="SHIBURISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">30</td>
+            <td>WANDILE MABONA </td>
+            <td><span id="MABONADate"></span></td>
+            <td id="MABONADone"><input type="password" name="" id="MABONAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABONAButton">Sign</button></td>
+            <td id="MABONASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">31</td>
+            <td> BABALWA SIKHUNYANA</td>
+            <td><span id="SIKHUNYANADate"></span></td>
+            <td id="SIKHUNYANADone"><input type="password" name="" id="SIKHUNYANAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIKHUNYANAButton">Sign</button></td>
+            <td id="SIKHUNYANASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">32</td>
+            <td> BUSI SIBEKO </td>
+            <td><span id="SIBEKODate"></span></td>
+            <td id="SIBEKODone"><input type="password" name="" id="SIBEKOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIBEKOButton">Sign</button></td>
+            <td id="SIBEKOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">33</td>
+            <td> CLEMENT RAGANYA</td>
+            <td><span id="RAGANYADate"></span></td>
+            <td id="RAGANYADone"><input type="password" name="" id="RAGANYAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="RAGANYAButton">Sign</button></td>
+            <td id="RAGANYASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">34</td>
+            <td> ELIZABETH ADAMS</td>
+            <td><span id="ADAMSDate"></span></td>
+            <td id="ADAMSDone"><input type="password" name="" id="ADAMSPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="ADAMSButton">Sign</button></td>
+            <td id="ADAMSSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">35</td>
+            <td>  KGOPOTSO MONAHENG</td>
+            <td><span id="MONAHENGDate"></span></td>
+            <td id="MONAHENGDone"><input type="password" name="" id="MONAHENGPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MONAHENGButton">Sign</button></td>
+            <td id="MONAHENGSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">36</td>
+            <td>  LERATO SIBIYA</td>
+            <td><span id="SIBIYADate"></span></td>
+            <td id="SIBIYADone"><input type="password" name="" id="SIBIYAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIBIYAButton">Sign</button></td>
+            <td id="SIBIYASign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">37</td>
+            <td> MAMELLO MOEKETSI</td>
+            <td><span id="MOEKETSIDate"></span></td>
+            <td id="MOEKETSIDone"><input type="password" name="" id="MOEKETSIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOEKETSIButton">Sign</button></td>
+            <td id="MOEKETSISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">38</td>
+            <td> MICHELLE MAKOFANE</td>
+            <td><span id="MAKOFANEDate"></span></td>
+            <td id="MAKOFANEDone"><input type="password" name="" id="MAKOFANEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MAKOFANEButton">Sign</button></td>
+            <td id="MAKOFANESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">39</td>
+            <td>MOGAU RAMAOTSWA </td>
+            <td><span id="RAMAOTSWADate"></span></td>
+            <td id="RAMAOTSWADone"><input type="password" name="" id="RAMAOTSWAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="RAMAOTSWAButton">Sign</button></td>
+            <td id="RAMAOTSWASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">40</td>
+            <td> MPHO NTHOESANE </td>
+            <td><span id="NTHOESANEDate"></span></td>
+            <td id="NTHOESANEDone"><input type="password" name="" id="NTHOESANEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NTHOESANEButton">Sign</button></td>
+            <td id="NTHOESANESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">41</td>
+            <td>  NOLUTHANDO DLAMINI</td>
+            <td><span id="DLAMINIDate"></span></td>
+            <td id="DLAMINIDone"><input type="password" name="" id="DLAMINIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="DLAMINIButton">Sign</button></td>
+            <td id="DLAMINISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">42</td>
+            <td>  NONTOKOZO MTHEMBU</td>
+            <td><span id="MTHEMBUDate"></span></td>
+            <td id="MTHEMBUDone"><input type="password" name="" id="MTHEMBUPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MTHEMBUButton">Sign</button></td>
+            <td id="MTHEMBUSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">43</td>
+            <td>  NTHABISENG RALEPHENYA</td>
+            <td><span id="RALEPHENYADate"></span></td>
+            <td id="RALEPHENYADone"><input type="password" name="" id="RALEPHENYAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="RALEPHENYAButton">Sign</button></td>
+            <td id="RALEPHENYASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">44</td>
+            <td> PHEELLO LEHOLA</td>
+            <td><span id="LEHOLADate"></span></td>
+            <td id="LEHOLADone"><input type="password" name="" id="LEHOLAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="LEHOLAButton">Sign</button></td>
+            <td id="LEHOLASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">45</td>
+            <td>  SHAZNAY THOMPSON</td>
+            <td><span id="THOMPSONDate"></span></td>
+            <td id="THOMPSONDone"><input type="password" name="" id="THOMPSONPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="THOMPSONButton">Sign</button></td>
+            <td id="THOMPSONSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">46</td>
+            <td> SIPHESIHLE ZONDI</td>
+            <td><span id="SIPHESIHLEDate"></span></td>
+            <td id="SIPHESIHLEDone"><input type="password" name="" id="SIPHESIHLEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIPHESIHLEButton">Sign</button></td>
+            <td id="SIPHESIHLESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">47</td>
+            <td> SITHEMBISO GOQO</td>
+            <td><span id="GOQODate"></span></td>
+            <td id="GOQODone"><input type="password" name="" id="GOQOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="GOQOButton">Sign</button></td>
+            <td id="GOQOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">48</td>
+            <td> TENDANI NETSHILEMA </td>
+            <td><span id="NETSHILEMADate"></span></td>
+            <td id="NETSHILEMADone"><input type="password" name="" id="NETSHILEMAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NETSHILEMAButton">Sign</button></td>
+            <td id="NETSHILEMASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">49</td>
+            <td>  THABELO MUNYAI</td>
+            <td><span id="MUNYAIDate"></span></td>
+            <td id="MUNYAIDone"><input type="password" name="" id="MUNYAIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MUNYAIButton">Sign</button></td>
+            <td id="MUNYAISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">50</td>
+            <td> THABO MABOITSHEGE</td>
+            <td><span id="MABOITSHEGEDate"></span></td>
+            <td id="MABOITSHEGEDone"><input type="password" name="" id="MABOITSHEGEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABOITSHEGEButton">Sign</button></td>
+            <td id="MABOITSHEGESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">51</td>
+            <td> VINCENT MONYANE</td>
+            <td><span id="MONYANEDate"></span></td>
+            <td id="MONYANEDone"><input type="password" name="" id="MONYANEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MONYANEButton">Sign</button></td>
+            <td id="MONYANESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">52</td>
+            <td> AMOHELANG MAHLOPHE</td>
+            <td><span id="MAHLOPHEDate"></span></td>
+            <td id="MAHLOPHEDone"><input type="password" name="" id="MAHLOPHEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MAHLOPHEButton">Sign</button></td>
+            <td id="MAHLOPHESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">53</td>
+            <td>  THILIVHALI MAMIDZA</td>
+            <td><span id="MAMIDZADate"></span></td>
+            <td id="MAMIDZADone"><input type="password" name="" id="MAMIDZAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MAMIDZAButton">Sign</button></td>
+            <td id="MAMIDZASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">54</td>
+            <td>  SIBONELO ZONDI </td>
+            <td><span id="SIBONELODate"></span></td>
+            <td id="SIBONELODone"><input type="password" name="" id="SIBONELOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIBONELOButton">Sign</button></td>
+            <td id="SIBONELOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">55</td>
+            <td>  SANELE NKOSI </td>
+            <td><span id="SANELEDate"></span></td>
+            <td id="SANELEDone"><input type="password" name="" id="SANELEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SANELEButton">Sign</button></td>
+            <td id="SANELESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">56</td>
+            <td> MAKITLE METSING</td>
+            <td><span id="METSINGDate"></span></td>
+            <td id="METSINGDone"><input type="password" name="" id="METSINGPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="METSINGButton">Sign</button></td>
+            <td id="METSINGSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">57</td>
+            <td> KAMOGELO VILAKAZI  </td>
+            <td><span id="VILAKAZIDate"></span></td>
+            <td id="VILAKAZIDone"><input type="password" name="" id="VILAKAZIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="VILAKAZIButton">Sign</button></td>
+            <td id="VILAKAZISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">58</td>
+            <td> BRADLEY BALOYI</td>
+            <td><span id="BALOYIDate"></span></td>
+            <td id="BALOYIDone"><input type="password" name="" id="BALOYIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="BALOYIButton">Sign</button></td>
+            <td id="BALOYISign"></td>
+        
+        
+        </tr>
+
+
+        
+
+       
+        
+
+    
+         
+    </table>
+
+    <button type="button" class="btn" id="Save-all" style="margin: 0 auto; display: flex;justify-content: center;align-items: center; margin-top: 20px;margin-bottom: 20px;">Save all signatures</button>
+
+
+
+    
+         <h3>Sign below</h3>
+
+         <div class="memo-details">
+            <span>Memo Title : 
+                <span id="memo-tile"></span>
+            </span>
+
+             <span>Memo File : 
+                <span id="memo-file"></span>
+            </span>
+         </div>
+             <table border="solid" style="margin: 0 auto;">
+        <th style="width: 50px;">No: </th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Enter password and sign</th>
+        <th>Signature</th>
+<tr>
+           
+
+    <tr>
+            <td style="width: 50px;">1</td>
+            <td>SUKDEV MAHENDRA </td>
+            <td><span id="SUKDEVDate"></span></td>
+            <td id="SUKDEVDone"><input type="password" name="" id="SUKDEVPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SUKDEVButton">Sign</button></td>
+            <td id="SUKDEVSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">2</td>
+            <td>MPHO MCDON MOETI </td>
+            <td><span id="MOETIDate"></span></td>
+            <td id="MOETIDone"><input type="password" name="" id="MOETIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOETIButton">Sign</button></td>
+            <td id="MOETISign"></td>
+        
+        
+        </tr>
+        <tr>
+            <td style="width: 50px;">3</td>
+            <td>LETHOBA, BENNIE</td>
+            <td><span id="LETHOBADate"></span></td>
+            <td id="LETHOBADone"><input type="password" name="" id="LETHOBAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="LETHOBAButton">Sign</button></td>
+            <td id="LETHOBASign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">4</td>
+            <td>DISEMELO MOLUPE</td>
+            <td><span id="DISEMELODate"></span></td>
+            <td id="DISEMELODone"><input type="password" name="" id="DISEMELOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="DISEMELOButton">Sign</button></td>
+            <td id="DISEMELOSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">5</td>
+            <td>FAITH MASHEGO </td>
+            <td><span id="MASHEGODate"></span></td>
+            <td id="MASHEGODone"><input type="password" name="" id="MASHEGOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MASHEGOButton">Sign</button></td>
+            <td id="MASHEGOSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">6</td>
+            <td> ITUMELENG MATLHAKE</td>
+            <td><span id="MATLHAKEDate"></span></td>
+            <td id="MATLHAKEDone"><input type="password" name="" id="MATLHAKEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MATLHAKEButton">Sign</button></td>
+            <td id="MATLHAKESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">7</td>
+            <td> JABULILE MLAKA</td>
+            <td><span id="MLAKADate"></span></td>
+            <td id="MLAKADone"><input type="password" name="" id="MLAKAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MLAKAButton">Sign</button></td>
+            <td id="MLAKASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">8</td>
+            <td> JABULANI MEKGWE</td>
+            <td><span id="MEKGWEDate"></span></td>
+            <td id="MEKGWEDone"><input type="password" name="" id="MEKGWEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MEKGWEButton">Sign</button></td>
+            <td id="MEKGWESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">9</td>
+            <td> JIM MABUSO</td>
+            <td><span id="MABUSODate"></span></td>
+            <td id="MABUSODone"><input type="password" name="" id="MABUSOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABUSOButton">Sign</button></td>
+            <td id="MABUSOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">10</td>
+            <td> KAMOGELO MABENA</td>
+            <td><span id="MABENADate"></span></td>
+            <td id="MABENADone"><input type="password" name="" id="MABENAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABENAButton">Sign</button></td>
+            <td id="MABENASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">11</td>
+            <td> MAKGABO MATSHA</td>
+            <td><span id="MATSHADate"></span></td>
+            <td id="MATSHADone"><input type="password" name="" id="MATSHAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MATSHAButton">Sign</button></td>
+            <td id="MATSHASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">12</td>
+            <td> MARITO NGOBENI </td>
+            <td><span id="NGOBENIDate"></span></td>
+            <td id="NGOBENIDone"><input type="password" name="" id="NGOBENIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NGOBENIButton">Sign</button></td>
+            <td id="NGOBENISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">13</td>
+            <td> MOKGADI MOTSEPE</td>
+            <td><span id="MOTSEPEDate"></span></td>
+            <td id="MOTSEPEDone"><input type="password" name="" id="MOTSEPEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOTSEPEButton">Sign</button></td>
+            <td id="MOTSEPESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">14</td>
+            <td> PRUDENCE MUVHALI </td>
+            <td><span id="MUVHALIDate"></span></td>
+            <td id="MUVHALIDone"><input type="password" name="" id="MUVHALIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MUVHALIButton">Sign</button></td>
+            <td id="MUVHALISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">15</td>
+            <td> WESTLEY BURTON</td>
+            <td><span id="BURTONDate"></span></td>
+            <td id="BURTONDone"><input type="password" name="" id="BURTONPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="BURTONButton">Sign</button></td>
+            <td id="BURTONSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">16</td>
+            <td>  YANGA NOFUMA</td>
+            <td><span id="NOFUMADate"></span></td>
+            <td id="NOFUMADone"><input type="password" name="" id="NOFUMAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NOFUMAButton">Sign</button></td>
+            <td id="NOFUMASign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">17</td>
+            <td>  ZANDILE MHLONGO</td>
+            <td><span id="MHLONGODate"></span></td>
+            <td id="MHLONGODone"><input type="password" name="" id="MHLONGOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MHLONGOButton">Sign</button></td>
+            <td id="MHLONGOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">18</td>
+            <td> CHULUMANCO DALI</td>
+            <td><span id="DALIDate"></span></td>
+            <td id="DALIDone"><input type="password" name="" id="DALIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="DALIButton">Sign</button></td>
+            <td id="DALISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">19</td>
+            <td> CLYVE CHABA</td>
+            <td><span id="CHABADate"></span></td>
+            <td id="CHABADone"><input type="password" name="" id="CHABAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="CHABAButton">Sign</button></td>
+            <td id="CHABASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">20</td>
+            <td>EDWIN NEVARI </td>
+            <td><span id="NEVARIDate"></span></td>
+            <td id="NEVARIDone"><input type="password" name="" id="NEVARIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NEVARIButton">Sign</button></td>
+            <td id="NEVARISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">21</td>
+            <td> GEORGE HOWARTH</td>
+            <td><span id="HOWARTHDate"></span></td>
+            <td id="HOWARTHDone"><input type="password" name="" id="HOWARTHPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="HOWARTHButton">Sign</button></td>
+            <td id="HOWARTHSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">22</td>
+            <td> MASERULE MORERWA</td>
+            <td><span id="MORERWADate"></span></td>
+            <td id="MORERWADone"><input type="password" name="" id="MORERWAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MORERWAButton">Sign</button></td>
+            <td id="MORERWASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">23</td>
+            <td> MURENDI MADZINGE </td>
+            <td><span id="MADZINGEDate"></span></td>
+            <td id="MADZINGEDone"><input type="password" name="" id="MADZINGEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MADZINGEButton">Sign</button></td>
+            <td id="MADZINGESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">24</td>
+            <td> PHALATENA MADIHLABA</td>
+            <td><span id="MADIHLABADate"></span></td>
+            <td id="MADIHLABADone"><input type="password" name="" id="MADIHLABAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MADIHLABAButton">Sign</button></td>
+            <td id="MADIHLABASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">25</td>
+            <td> THABISO MOTHIBE</td>
+            <td><span id="MOTHIBEDate"></span></td>
+            <td id="MOTHIBEDone"><input type="password" name="" id="MOTHIBEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOTHIBEButton">Sign</button></td>
+            <td id="MOTHIBESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">26</td>
+            <td> EDITH NKOSI  </td>
+            <td><span id="EDITHDate"></span></td>
+            <td id="EDITHDone"><input type="password" name="" id="EDITHPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="EDITHButton">Sign</button></td>
+            <td id="EDITHSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">27</td>
+            <td>NDIVHUWO MUHANELWA</td>
+            <td><span id="MUHANELWADate"></span></td>
+            <td id="MUHANELWADone"><input type="password" name="" id="MUHANELWAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MUHANELWAButton">Sign</button></td>
+            <td id="MUHANELWASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">28</td>
+            <td>  NISHAAT KRUGER</td>
+            <td><span id="KRUGERDate"></span></td>
+            <td id="KRUGERDone"><input type="password" name="" id="KRUGERPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="KRUGERButton">Sign</button></td>
+            <td id="KRUGERSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">29</td>
+            <td>  TSHIKANI SHIBURI </td>
+            <td><span id="SHIBURIDate"></span></td>
+            <td id="SHIBURIDone"><input type="password" name="" id="SHIBURIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SHIBURIButton">Sign</button></td>
+            <td id="SHIBURISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">30</td>
+            <td>WANDILE MABONA </td>
+            <td><span id="MABONADate"></span></td>
+            <td id="MABONADone"><input type="password" name="" id="MABONAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABONAButton">Sign</button></td>
+            <td id="MABONASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">31</td>
+            <td> BABALWA SIKHUNYANA</td>
+            <td><span id="SIKHUNYANADate"></span></td>
+            <td id="SIKHUNYANADone"><input type="password" name="" id="SIKHUNYANAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIKHUNYANAButton">Sign</button></td>
+            <td id="SIKHUNYANASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">32</td>
+            <td> BUSI SIBEKO </td>
+            <td><span id="SIBEKODate"></span></td>
+            <td id="SIBEKODone"><input type="password" name="" id="SIBEKOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIBEKOButton">Sign</button></td>
+            <td id="SIBEKOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">33</td>
+            <td> CLEMENT RAGANYA</td>
+            <td><span id="RAGANYADate"></span></td>
+            <td id="RAGANYADone"><input type="password" name="" id="RAGANYAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="RAGANYAButton">Sign</button></td>
+            <td id="RAGANYASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">34</td>
+            <td> ELIZABETH ADAMS</td>
+            <td><span id="ADAMSDate"></span></td>
+            <td id="ADAMSDone"><input type="password" name="" id="ADAMSPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="ADAMSButton">Sign</button></td>
+            <td id="ADAMSSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">35</td>
+            <td>  KGOPOTSO MONAHENG</td>
+            <td><span id="MONAHENGDate"></span></td>
+            <td id="MONAHENGDone"><input type="password" name="" id="MONAHENGPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MONAHENGButton">Sign</button></td>
+            <td id="MONAHENGSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">36</td>
+            <td>  LERATO SIBIYA</td>
+            <td><span id="SIBIYADate"></span></td>
+            <td id="SIBIYADone"><input type="password" name="" id="SIBIYAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIBIYAButton">Sign</button></td>
+            <td id="SIBIYASign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">37</td>
+            <td> MAMELLO MOEKETSI</td>
+            <td><span id="MOEKETSIDate"></span></td>
+            <td id="MOEKETSIDone"><input type="password" name="" id="MOEKETSIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOEKETSIButton">Sign</button></td>
+            <td id="MOEKETSISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">38</td>
+            <td> MICHELLE MAKOFANE</td>
+            <td><span id="MAKOFANEDate"></span></td>
+            <td id="MAKOFANEDone"><input type="password" name="" id="MAKOFANEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MAKOFANEButton">Sign</button></td>
+            <td id="MAKOFANESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">39</td>
+            <td>MOGAU RAMAOTSWA </td>
+            <td><span id="RAMAOTSWADate"></span></td>
+            <td id="RAMAOTSWADone"><input type="password" name="" id="RAMAOTSWAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="RAMAOTSWAButton">Sign</button></td>
+            <td id="RAMAOTSWASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">40</td>
+            <td> MPHO NTHOESANE </td>
+            <td><span id="NTHOESANEDate"></span></td>
+            <td id="NTHOESANEDone"><input type="password" name="" id="NTHOESANEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NTHOESANEButton">Sign</button></td>
+            <td id="NTHOESANESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">41</td>
+            <td>  NOLUTHANDO DLAMINI</td>
+            <td><span id="DLAMINIDate"></span></td>
+            <td id="DLAMINIDone"><input type="password" name="" id="DLAMINIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="DLAMINIButton">Sign</button></td>
+            <td id="DLAMINISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">42</td>
+            <td>  NONTOKOZO MTHEMBU</td>
+            <td><span id="MTHEMBUDate"></span></td>
+            <td id="MTHEMBUDone"><input type="password" name="" id="MTHEMBUPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MTHEMBUButton">Sign</button></td>
+            <td id="MTHEMBUSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">43</td>
+            <td>  NTHABISENG RALEPHENYA</td>
+            <td><span id="RALEPHENYADate"></span></td>
+            <td id="RALEPHENYADone"><input type="password" name="" id="RALEPHENYAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="RALEPHENYAButton">Sign</button></td>
+            <td id="RALEPHENYASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">44</td>
+            <td> PHEELLO LEHOLA</td>
+            <td><span id="LEHOLADate"></span></td>
+            <td id="LEHOLADone"><input type="password" name="" id="LEHOLAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="LEHOLAButton">Sign</button></td>
+            <td id="LEHOLASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">45</td>
+            <td>  SHAZNAY THOMPSON</td>
+            <td><span id="THOMPSONDate"></span></td>
+            <td id="THOMPSONDone"><input type="password" name="" id="THOMPSONPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="THOMPSONButton">Sign</button></td>
+            <td id="THOMPSONSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">46</td>
+            <td> SIPHESIHLE ZONDI</td>
+            <td><span id="SIPHESIHLEDate"></span></td>
+            <td id="SIPHESIHLEDone"><input type="password" name="" id="SIPHESIHLEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIPHESIHLEButton">Sign</button></td>
+            <td id="SIPHESIHLESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">47</td>
+            <td> SITHEMBISO GOQO</td>
+            <td><span id="GOQODate"></span></td>
+            <td id="GOQODone"><input type="password" name="" id="GOQOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="GOQOButton">Sign</button></td>
+            <td id="GOQOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">48</td>
+            <td> TENDANI NETSHILEMA </td>
+            <td><span id="NETSHILEMADate"></span></td>
+            <td id="NETSHILEMADone"><input type="password" name="" id="NETSHILEMAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NETSHILEMAButton">Sign</button></td>
+            <td id="NETSHILEMASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">49</td>
+            <td>  THABELO MUNYAI</td>
+            <td><span id="MUNYAIDate"></span></td>
+            <td id="MUNYAIDone"><input type="password" name="" id="MUNYAIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MUNYAIButton">Sign</button></td>
+            <td id="MUNYAISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">50</td>
+            <td> THABO MABOITSHEGE</td>
+            <td><span id="MABOITSHEGEDate"></span></td>
+            <td id="MABOITSHEGEDone"><input type="password" name="" id="MABOITSHEGEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABOITSHEGEButton">Sign</button></td>
+            <td id="MABOITSHEGESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">51</td>
+            <td> VINCENT MONYANE</td>
+            <td><span id="MONYANEDate"></span></td>
+            <td id="MONYANEDone"><input type="password" name="" id="MONYANEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MONYANEButton">Sign</button></td>
+            <td id="MONYANESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">52</td>
+            <td> AMOHELANG MAHLOPHE</td>
+            <td><span id="MAHLOPHEDate"></span></td>
+            <td id="MAHLOPHEDone"><input type="password" name="" id="MAHLOPHEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MAHLOPHEButton">Sign</button></td>
+            <td id="MAHLOPHESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">53</td>
+            <td>  THILIVHALI MAMIDZA</td>
+            <td><span id="MAMIDZADate"></span></td>
+            <td id="MAMIDZADone"><input type="password" name="" id="MAMIDZAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MAMIDZAButton">Sign</button></td>
+            <td id="MAMIDZASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">54</td>
+            <td>  SIBONELO ZONDI </td>
+            <td><span id="SIBONELODate"></span></td>
+            <td id="SIBONELODone"><input type="password" name="" id="SIBONELOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIBONELOButton">Sign</button></td>
+            <td id="SIBONELOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">55</td>
+            <td>  SANELE NKOSI </td>
+            <td><span id="SANELEDate"></span></td>
+            <td id="SANELEDone"><input type="password" name="" id="SANELEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SANELEButton">Sign</button></td>
+            <td id="SANELESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">56</td>
+            <td> MAKITLE METSING</td>
+            <td><span id="METSINGDate"></span></td>
+            <td id="METSINGDone"><input type="password" name="" id="METSINGPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="METSINGButton">Sign</button></td>
+            <td id="METSINGSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">57</td>
+            <td> KAMOGELO VILAKAZI  </td>
+            <td><span id="VILAKAZIDate"></span></td>
+            <td id="VILAKAZIDone"><input type="password" name="" id="VILAKAZIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="VILAKAZIButton">Sign</button></td>
+            <td id="VILAKAZISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">58</td>
+            <td> BRADLEY BALOYI</td>
+            <td><span id="BALOYIDate"></span></td>
+            <td id="BALOYIDone"><input type="password" name="" id="BALOYIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="BALOYIButton">Sign</button></td>
+            <td id="BALOYISign"></td>
+        
+        
+        </tr>
+
+
+        
+
+       
+        
+
+    
+         
+    </table>
+
+    <button type="button" class="btn" id="Save-all" style="margin: 0 auto; display: flex;justify-content: center;align-items: center; margin-top: 20px;margin-bottom: 20px;">Save all signatures</button>
+
+
+
+    
+         <h3>Sign below</h3>
+
+         <div class="memo-details">
+            <span>Memo Title : 
+                <span id="memo-tile"></span>
+            </span>
+
+             <span>Memo File : 
+                <span id="memo-file"></span>
+            </span>
+         </div>
+             <table border="solid" style="margin: 0 auto;">
+        <th style="width: 50px;">No: </th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Enter password and sign</th>
+        <th>Signature</th>
+<tr>
+           
+
+    <tr>
+            <td style="width: 50px;">1</td>
+            <td>SUKDEV MAHENDRA </td>
+            <td><span id="SUKDEVDate"></span></td>
+            <td id="SUKDEVDone"><input type="password" name="" id="SUKDEVPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SUKDEVButton">Sign</button></td>
+            <td id="SUKDEVSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">2</td>
+            <td>MPHO MCDON MOETI </td>
+            <td><span id="MOETIDate"></span></td>
+            <td id="MOETIDone"><input type="password" name="" id="MOETIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOETIButton">Sign</button></td>
+            <td id="MOETISign"></td>
+        
+        
+        </tr>
+        <tr>
+            <td style="width: 50px;">3</td>
+            <td>LETHOBA, BENNIE</td>
+            <td><span id="LETHOBADate"></span></td>
+            <td id="LETHOBADone"><input type="password" name="" id="LETHOBAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="LETHOBAButton">Sign</button></td>
+            <td id="LETHOBASign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">4</td>
+            <td>DISEMELO MOLUPE</td>
+            <td><span id="DISEMELODate"></span></td>
+            <td id="DISEMELODone"><input type="password" name="" id="DISEMELOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="DISEMELOButton">Sign</button></td>
+            <td id="DISEMELOSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">5</td>
+            <td>FAITH MASHEGO </td>
+            <td><span id="MASHEGODate"></span></td>
+            <td id="MASHEGODone"><input type="password" name="" id="MASHEGOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MASHEGOButton">Sign</button></td>
+            <td id="MASHEGOSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">6</td>
+            <td> ITUMELENG MATLHAKE</td>
+            <td><span id="MATLHAKEDate"></span></td>
+            <td id="MATLHAKEDone"><input type="password" name="" id="MATLHAKEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MATLHAKEButton">Sign</button></td>
+            <td id="MATLHAKESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">7</td>
+            <td> JABULILE MLAKA</td>
+            <td><span id="MLAKADate"></span></td>
+            <td id="MLAKADone"><input type="password" name="" id="MLAKAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MLAKAButton">Sign</button></td>
+            <td id="MLAKASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">8</td>
+            <td> JABULANI MEKGWE</td>
+            <td><span id="MEKGWEDate"></span></td>
+            <td id="MEKGWEDone"><input type="password" name="" id="MEKGWEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MEKGWEButton">Sign</button></td>
+            <td id="MEKGWESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">9</td>
+            <td> JIM MABUSO</td>
+            <td><span id="MABUSODate"></span></td>
+            <td id="MABUSODone"><input type="password" name="" id="MABUSOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABUSOButton">Sign</button></td>
+            <td id="MABUSOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">10</td>
+            <td> KAMOGELO MABENA</td>
+            <td><span id="MABENADate"></span></td>
+            <td id="MABENADone"><input type="password" name="" id="MABENAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABENAButton">Sign</button></td>
+            <td id="MABENASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">11</td>
+            <td> MAKGABO MATSHA</td>
+            <td><span id="MATSHADate"></span></td>
+            <td id="MATSHADone"><input type="password" name="" id="MATSHAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MATSHAButton">Sign</button></td>
+            <td id="MATSHASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">12</td>
+            <td> MARITO NGOBENI </td>
+            <td><span id="NGOBENIDate"></span></td>
+            <td id="NGOBENIDone"><input type="password" name="" id="NGOBENIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NGOBENIButton">Sign</button></td>
+            <td id="NGOBENISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">13</td>
+            <td> MOKGADI MOTSEPE</td>
+            <td><span id="MOTSEPEDate"></span></td>
+            <td id="MOTSEPEDone"><input type="password" name="" id="MOTSEPEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOTSEPEButton">Sign</button></td>
+            <td id="MOTSEPESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">14</td>
+            <td> PRUDENCE MUVHALI </td>
+            <td><span id="MUVHALIDate"></span></td>
+            <td id="MUVHALIDone"><input type="password" name="" id="MUVHALIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MUVHALIButton">Sign</button></td>
+            <td id="MUVHALISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">15</td>
+            <td> WESTLEY BURTON</td>
+            <td><span id="BURTONDate"></span></td>
+            <td id="BURTONDone"><input type="password" name="" id="BURTONPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="BURTONButton">Sign</button></td>
+            <td id="BURTONSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">16</td>
+            <td>  YANGA NOFUMA</td>
+            <td><span id="NOFUMADate"></span></td>
+            <td id="NOFUMADone"><input type="password" name="" id="NOFUMAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NOFUMAButton">Sign</button></td>
+            <td id="NOFUMASign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">17</td>
+            <td>  ZANDILE MHLONGO</td>
+            <td><span id="MHLONGODate"></span></td>
+            <td id="MHLONGODone"><input type="password" name="" id="MHLONGOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MHLONGOButton">Sign</button></td>
+            <td id="MHLONGOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">18</td>
+            <td> CHULUMANCO DALI</td>
+            <td><span id="DALIDate"></span></td>
+            <td id="DALIDone"><input type="password" name="" id="DALIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="DALIButton">Sign</button></td>
+            <td id="DALISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">19</td>
+            <td> CLYVE CHABA</td>
+            <td><span id="CHABADate"></span></td>
+            <td id="CHABADone"><input type="password" name="" id="CHABAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="CHABAButton">Sign</button></td>
+            <td id="CHABASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">20</td>
+            <td>EDWIN NEVARI </td>
+            <td><span id="NEVARIDate"></span></td>
+            <td id="NEVARIDone"><input type="password" name="" id="NEVARIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NEVARIButton">Sign</button></td>
+            <td id="NEVARISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">21</td>
+            <td> GEORGE HOWARTH</td>
+            <td><span id="HOWARTHDate"></span></td>
+            <td id="HOWARTHDone"><input type="password" name="" id="HOWARTHPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="HOWARTHButton">Sign</button></td>
+            <td id="HOWARTHSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">22</td>
+            <td> MASERULE MORERWA</td>
+            <td><span id="MORERWADate"></span></td>
+            <td id="MORERWADone"><input type="password" name="" id="MORERWAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MORERWAButton">Sign</button></td>
+            <td id="MORERWASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">23</td>
+            <td> MURENDI MADZINGE </td>
+            <td><span id="MADZINGEDate"></span></td>
+            <td id="MADZINGEDone"><input type="password" name="" id="MADZINGEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MADZINGEButton">Sign</button></td>
+            <td id="MADZINGESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">24</td>
+            <td> PHALATENA MADIHLABA</td>
+            <td><span id="MADIHLABADate"></span></td>
+            <td id="MADIHLABADone"><input type="password" name="" id="MADIHLABAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MADIHLABAButton">Sign</button></td>
+            <td id="MADIHLABASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">25</td>
+            <td> THABISO MOTHIBE</td>
+            <td><span id="MOTHIBEDate"></span></td>
+            <td id="MOTHIBEDone"><input type="password" name="" id="MOTHIBEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOTHIBEButton">Sign</button></td>
+            <td id="MOTHIBESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">26</td>
+            <td> EDITH NKOSI  </td>
+            <td><span id="EDITHDate"></span></td>
+            <td id="EDITHDone"><input type="password" name="" id="EDITHPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="EDITHButton">Sign</button></td>
+            <td id="EDITHSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">27</td>
+            <td>NDIVHUWO MUHANELWA</td>
+            <td><span id="MUHANELWADate"></span></td>
+            <td id="MUHANELWADone"><input type="password" name="" id="MUHANELWAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MUHANELWAButton">Sign</button></td>
+            <td id="MUHANELWASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">28</td>
+            <td>  NISHAAT KRUGER</td>
+            <td><span id="KRUGERDate"></span></td>
+            <td id="KRUGERDone"><input type="password" name="" id="KRUGERPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="KRUGERButton">Sign</button></td>
+            <td id="KRUGERSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">29</td>
+            <td>  TSHIKANI SHIBURI </td>
+            <td><span id="SHIBURIDate"></span></td>
+            <td id="SHIBURIDone"><input type="password" name="" id="SHIBURIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SHIBURIButton">Sign</button></td>
+            <td id="SHIBURISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">30</td>
+            <td>WANDILE MABONA </td>
+            <td><span id="MABONADate"></span></td>
+            <td id="MABONADone"><input type="password" name="" id="MABONAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABONAButton">Sign</button></td>
+            <td id="MABONASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">31</td>
+            <td> BABALWA SIKHUNYANA</td>
+            <td><span id="SIKHUNYANADate"></span></td>
+            <td id="SIKHUNYANADone"><input type="password" name="" id="SIKHUNYANAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIKHUNYANAButton">Sign</button></td>
+            <td id="SIKHUNYANASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">32</td>
+            <td> BUSI SIBEKO </td>
+            <td><span id="SIBEKODate"></span></td>
+            <td id="SIBEKODone"><input type="password" name="" id="SIBEKOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIBEKOButton">Sign</button></td>
+            <td id="SIBEKOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">33</td>
+            <td> CLEMENT RAGANYA</td>
+            <td><span id="RAGANYADate"></span></td>
+            <td id="RAGANYADone"><input type="password" name="" id="RAGANYAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="RAGANYAButton">Sign</button></td>
+            <td id="RAGANYASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">34</td>
+            <td> ELIZABETH ADAMS</td>
+            <td><span id="ADAMSDate"></span></td>
+            <td id="ADAMSDone"><input type="password" name="" id="ADAMSPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="ADAMSButton">Sign</button></td>
+            <td id="ADAMSSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">35</td>
+            <td>  KGOPOTSO MONAHENG</td>
+            <td><span id="MONAHENGDate"></span></td>
+            <td id="MONAHENGDone"><input type="password" name="" id="MONAHENGPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MONAHENGButton">Sign</button></td>
+            <td id="MONAHENGSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">36</td>
+            <td>  LERATO SIBIYA</td>
+            <td><span id="SIBIYADate"></span></td>
+            <td id="SIBIYADone"><input type="password" name="" id="SIBIYAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIBIYAButton">Sign</button></td>
+            <td id="SIBIYASign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">37</td>
+            <td> MAMELLO MOEKETSI</td>
+            <td><span id="MOEKETSIDate"></span></td>
+            <td id="MOEKETSIDone"><input type="password" name="" id="MOEKETSIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MOEKETSIButton">Sign</button></td>
+            <td id="MOEKETSISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">38</td>
+            <td> MICHELLE MAKOFANE</td>
+            <td><span id="MAKOFANEDate"></span></td>
+            <td id="MAKOFANEDone"><input type="password" name="" id="MAKOFANEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MAKOFANEButton">Sign</button></td>
+            <td id="MAKOFANESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">39</td>
+            <td>MOGAU RAMAOTSWA </td>
+            <td><span id="RAMAOTSWADate"></span></td>
+            <td id="RAMAOTSWADone"><input type="password" name="" id="RAMAOTSWAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="RAMAOTSWAButton">Sign</button></td>
+            <td id="RAMAOTSWASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">40</td>
+            <td> MPHO NTHOESANE </td>
+            <td><span id="NTHOESANEDate"></span></td>
+            <td id="NTHOESANEDone"><input type="password" name="" id="NTHOESANEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NTHOESANEButton">Sign</button></td>
+            <td id="NTHOESANESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">41</td>
+            <td>  NOLUTHANDO DLAMINI</td>
+            <td><span id="DLAMINIDate"></span></td>
+            <td id="DLAMINIDone"><input type="password" name="" id="DLAMINIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="DLAMINIButton">Sign</button></td>
+            <td id="DLAMINISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">42</td>
+            <td>  NONTOKOZO MTHEMBU</td>
+            <td><span id="MTHEMBUDate"></span></td>
+            <td id="MTHEMBUDone"><input type="password" name="" id="MTHEMBUPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MTHEMBUButton">Sign</button></td>
+            <td id="MTHEMBUSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">43</td>
+            <td>  NTHABISENG RALEPHENYA</td>
+            <td><span id="RALEPHENYADate"></span></td>
+            <td id="RALEPHENYADone"><input type="password" name="" id="RALEPHENYAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="RALEPHENYAButton">Sign</button></td>
+            <td id="RALEPHENYASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">44</td>
+            <td> PHEELLO LEHOLA</td>
+            <td><span id="LEHOLADate"></span></td>
+            <td id="LEHOLADone"><input type="password" name="" id="LEHOLAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="LEHOLAButton">Sign</button></td>
+            <td id="LEHOLASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">45</td>
+            <td>  SHAZNAY THOMPSON</td>
+            <td><span id="THOMPSONDate"></span></td>
+            <td id="THOMPSONDone"><input type="password" name="" id="THOMPSONPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="THOMPSONButton">Sign</button></td>
+            <td id="THOMPSONSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">46</td>
+            <td> SIPHESIHLE ZONDI</td>
+            <td><span id="SIPHESIHLEDate"></span></td>
+            <td id="SIPHESIHLEDone"><input type="password" name="" id="SIPHESIHLEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIPHESIHLEButton">Sign</button></td>
+            <td id="SIPHESIHLESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">47</td>
+            <td> SITHEMBISO GOQO</td>
+            <td><span id="GOQODate"></span></td>
+            <td id="GOQODone"><input type="password" name="" id="GOQOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="GOQOButton">Sign</button></td>
+            <td id="GOQOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">48</td>
+            <td> TENDANI NETSHILEMA </td>
+            <td><span id="NETSHILEMADate"></span></td>
+            <td id="NETSHILEMADone"><input type="password" name="" id="NETSHILEMAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="NETSHILEMAButton">Sign</button></td>
+            <td id="NETSHILEMASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">49</td>
+            <td>  THABELO MUNYAI</td>
+            <td><span id="MUNYAIDate"></span></td>
+            <td id="MUNYAIDone"><input type="password" name="" id="MUNYAIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MUNYAIButton">Sign</button></td>
+            <td id="MUNYAISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">50</td>
+            <td> THABO MABOITSHEGE</td>
+            <td><span id="MABOITSHEGEDate"></span></td>
+            <td id="MABOITSHEGEDone"><input type="password" name="" id="MABOITSHEGEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MABOITSHEGEButton">Sign</button></td>
+            <td id="MABOITSHEGESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">51</td>
+            <td> VINCENT MONYANE</td>
+            <td><span id="MONYANEDate"></span></td>
+            <td id="MONYANEDone"><input type="password" name="" id="MONYANEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MONYANEButton">Sign</button></td>
+            <td id="MONYANESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">52</td>
+            <td> AMOHELANG MAHLOPHE</td>
+            <td><span id="MAHLOPHEDate"></span></td>
+            <td id="MAHLOPHEDone"><input type="password" name="" id="MAHLOPHEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MAHLOPHEButton">Sign</button></td>
+            <td id="MAHLOPHESign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">53</td>
+            <td>  THILIVHALI MAMIDZA</td>
+            <td><span id="MAMIDZADate"></span></td>
+            <td id="MAMIDZADone"><input type="password" name="" id="MAMIDZAPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="MAMIDZAButton">Sign</button></td>
+            <td id="MAMIDZASign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">54</td>
+            <td>  SIBONELO ZONDI </td>
+            <td><span id="SIBONELODate"></span></td>
+            <td id="SIBONELODone"><input type="password" name="" id="SIBONELOPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SIBONELOButton">Sign</button></td>
+            <td id="SIBONELOSign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">55</td>
+            <td>  SANELE NKOSI </td>
+            <td><span id="SANELEDate"></span></td>
+            <td id="SANELEDone"><input type="password" name="" id="SANELEPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="SANELEButton">Sign</button></td>
+            <td id="SANELESign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">56</td>
+            <td> MAKITLE METSING</td>
+            <td><span id="METSINGDate"></span></td>
+            <td id="METSINGDone"><input type="password" name="" id="METSINGPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="METSINGButton">Sign</button></td>
+            <td id="METSINGSign"></td>
+        
+        
+        </tr>
+
+        <tr>
+            <td style="width: 50px;">57</td>
+            <td> KAMOGELO VILAKAZI  </td>
+            <td><span id="VILAKAZIDate"></span></td>
+            <td id="VILAKAZIDone"><input type="password" name="" id="VILAKAZIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="VILAKAZIButton">Sign</button></td>
+            <td id="VILAKAZISign"></td>
+        
+        
+        </tr>
+
+
+        <tr>
+            <td style="width: 50px;">58</td>
+            <td> BRADLEY BALOYI</td>
+            <td><span id="BALOYIDate"></span></td>
+            <td id="BALOYIDone"><input type="password" name="" id="BALOYIPassword"  style="margin-bottom: 10px;"><br> 
+            <button type="button" id="BALOYIButton">Sign</button></td>
+            <td id="BALOYISign"></td>
+        
+        
+        </tr>
+
+
+        
+
+       
+        
+
+    
+         
+    </table>
+
+    <button type="button" class="btn" id="Save-all" style="margin: 0 auto; display: flex;justify-content: center;align-items: center; margin-top: 20px;margin-bottom: 20px;">Save all signatures</button>
+        </div>
+        
+        
+
+
+
+
+    
+    
+
+    <script src="login.js"></script>
+    <script src="manager.js"></script>
+    <script src="briefadd.js"></script>
+    <script src="brieftable.js"></script>
+</body>
+</html>

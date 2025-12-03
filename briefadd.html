@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add documents</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Planning Documents</title>
+    <link rel="stylesheet" href="briefing.css">
+</head>
+<body>
+<div class="main">
+    <h1>Management</h1>
+    <h2>Flight Planning Documents</h2>
+
+    <div class="upload-section">
+        <h2>Upload a new file</h2>
+        <input type="text" id="file-title" placeholder="Document title" required>
+        <textarea id="file-description" placeholder="Description of the document" required></textarea>
+        <input type="file" id="file-input" required>
+        <button onclick="addFile()">Upload and Save</button>
+    </div>
+
+   
+    <a href="briefcheck.html"><button type="button" class="btn">Documents</button></a>
+
+    </div>
+<script src="briefadd.js"></script>
+
+</body>
+</html>

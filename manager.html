@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeronautical Information Management</title>
+   <link rel="stylesheet" href="manager.css">
+</head>
+<body>
+
+    <div class="main-window" id="main_window">
+
+
+    <h1>ATNS</h1>
+    <h2>Aeronautical Information Management</h2>
+    <h3 id="incharge">Management</h3>
+
+
+    
+     <!--choosing documents-->
+     <div class="back-btn" id="back-btn">Back</div>
+    <div class="choose-flight" id="choose-flight">
+        <h3>Flight Planning</h3>
+        
+        <div class="btns">
+            <a href="Documents/Briefing/briefsign.html"><button type="button" class="btn">Sign a memo</button></a>
+           <a href="Documents/Briefing/briefadd.html"><button type="button" class="btn">Add Memo</button></a> 
+            
+        </div>
+
+        <div class="btns">
+            <a href="Documents/Briefing/briefcheck.html"><button type="button" class="btn">Memo files</button></a>
+            <button type="button" class="btn">Report</button>
+        </div>
+    </div>
+
+     <div class="choose-notam" id="choose-notam">
+        <h3>NOTAM and Dynamic</h3>
+        
+        <div class="btns">
+            <button type="button" class="btn">Sign a memo</button>
+            <a href="Documents/NOTAM/notamadd.html"><button type="button" class="btn">Add Memo</button></a>
+            
+        </div>
+
+        <div class="btns">
+           <a href="Documents/NOTAM/notamcheck.html"> <button type="button" class="btn">Memo files</button></a>
+            <button type="button" class="btn">Report</button>
+        </div>
+    </div>
+
+
+     <div class="choose-atn" id="choose-atn">
+        <h3>ATN</h3>
+        
+        <div class="btns">
+            <button type="button" class="btn">Sign a memo</button>
+            <a href="Documents/ATN/atnadd.html"><button type="button" class="btn">Add Memo</button></a>
+            
+        </div>
+
+        <div class="btns">
+            <a href="Documents/ATN/atncheck.html"><button type="button" class="btn">Memo files</button></a>
+            <button type="button" class="btn">Report</button>
+        </div>
+    </div>
+
+    <!--Shifts-->
+    <div class="adding-shifts" id="adding-shifts">
+        <h3>Add the shifts</h3>
+        <div class="input-shifts">
+            <input type="text" name="" id="text_shift" placeholder="Enter the shift and day" class="input-space">
+            &nbsp;&nbsp;
+            <button id="shift_addBtn" class="shift_addBtn">Add shift</button>
+        </div>
+        
+        
+         
+    </div>
+
+    <div class="check-shifts" id="check-shifts">
+        <h3>Shifts available</h3>
+        <ul id="shift_List">
+                
+            </ul>
+    </div>
+
+    <!--Announcements-->
+    <div class="type-of-announcements" id="type-of-announcements">
+        <div class="btns">
+            <a href="Announcements/urgent.html"><button type="button" class="btn">Urgent announcements</button></a>
+            <a href="Announcements/general.html"><button type="button" class="btn">General announcements</button></a>
+            
+        </div>
+        <div class="btns">
+            <a href="Announcements/reminder.html"><button type="button" class="btn">Reminders</button></a>
+        </div>
+        </div>
+
+
+    <div class="container" id="container">
+
+
+       
+
+
+        <div class="side-menu">
+            
+            <div class="menu-item active" data-target="info-section-1">
+                Memo Files
+            </div>
+            <div class="menu-item" data-target="info-section-2">
+                Meetings
+            </div>
+            <div class="menu-item" data-target="info-section-3">
+                Occurence log
+            </div>
+            <div class="menu-item" data-target="info-section-4">
+                Reports
+            </div>
+
+            <div class="menu-item" data-target="info-section-5">
+                Training
+            </div>
+
+            <div class="menu-item" data-target="info-section-6">
+                Shift cover
+            </div>
+
+            <div class="menu-item" data-target="info-section-7">
+                Announcements
+            </div>
+
+            <div class="menu-item" data-target="info-section-8">
+                Notifications
+            </div>
+
+             <div class="menu-item" data-target="info-section-9">
+                Employees
+            </div>
+
+             <div class="menu-item" data-target="info-section-10">
+                Resources
+            </div>
+
+             <div class="menu-item" data-target="info-section-11">
+                Group chat
+            </div>
+
+             <div class="menu-item" data-target="info-section-12">
+                Files
+            </div>
+
+             <div class="menu-item" data-target="info-section-13">
+                Log out 
+            </div>
+        </div>
+
+        <div class="content-display">
+            
+            <div id="info-section-1" class="content-block visible">
+                
+                    <div class="btns">
+                        <button type="button" class="btn" id="flight">Flight Planning</button>
+                        <button type="button" class="btn" id="notam">NOTAM and Dynamic</button>
+                    </div>
+                
+                <div class="btns">
+                        <button type="button" class="btn" id="atn">ATN</button>
+                        <a href="Documents/Old Memo File.pdf"><button type="button" class="btn">Old Memo</button></a>
+                    </div>
+                
+
+            </div>
+
+            <div id="info-section-2" class="content-block">
+                <div class="select-meetings">
+                    <div class="btns">
+                        <button type="button" class="btn">Check meetings</button>
+                        <button type="button" class="btn">Attendance</button>
+                    </div>
+                    <div class="btns">
+                        <button type="button" class="btn">Add minutes</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="info-section-3" class="content-block">
+                <div class="select-occurence">
+                    Loading
+              <!--      <input type="time" name="" id="" placeholder="Time" class="time">
+            <select name="" id="" class="select">
+                <option value="">-</option>
+                <option value="">ON</option>
+                <option value="">OFF</option>
+            </select>
+            <input type="text" name="" id="" maxlength="3" placeholder="Initials" class="initials">
+            <input type="text" name="" id="" placeholder="Operation comments" class="comments">
+            <button type="button" id="" class="sign-btn">Sign</button>
+            -->
+        </div>
+                
+            </div>
+
+            <div id="info-section-4" class="content-block">
+                <div class="select-report">
+                <div class="btns">
+                    <button type="button" class="btn">Training</button>
+                    <button type="button" class="btn">Memo signatures</button>
+                </div>
+
+                <div class="btns">
+                    <button type="button" class="btn">Proficiencies</button>
+                    <button type="button" class="btn">Employee progress</button>
+                </div>
+
+                </div>
+            </div>
+
+            <div id="info-section-5" class="content-block">
+                <div class="select-training">
+                <div class="btns">
+                    <button type="button" class="btn">Flight Planning</button>
+                    <button type="button" class="btn">NOTAM</button>
+                </div>
+
+                <div class="btns">
+                    <button type="button" class="btn">Dynamic</button>
+                    <button type="button" class="btn">ATN</button>
+                </div>
+
+                </div>
+            </div>
+
+
+             <div id="info-section-6" class="content-block">
+                <div class="select-shift">
+                <div class="btns">
+                    <button type="button" class="btn" id="shifts_available">Shifts available</button>
+                    <button type="button" class="btn" id="shifts_add">Add shifts</button>
+                </div>
+
+                
+
+                </div>
+            </div>
+
+
+
+
+
+             <div id="info-section-7" class="content-block">
+                <div class="select-announcement">
+                <div class="btns">
+                    <button type="button" class="btn" id="read-announcements">Read announcements</button>
+                    <a href="Announcements/text.html"><button type="button" class="btn">Send a text announcement</button></a>
+                </div>
+
+                <div class="btns">
+                    <a href="Announcements/file.html"><button type="button" class="btn">Send a file announcement</button></a>
+                   
+                </div>
+
+                </div>
+            </div>
+
+            <div id="info-section-8" class="content-block">
+                <div class="select-notification">
+                    <h3>Notifications</h3>
+
+                    
+                </div>
+            </div>
+
+            <div id="info-section-9" class="content-block">
+                <div class="select-employees">
+                    <div class="btns">
+                        <a href="Messages/inbox.html"><button type="button" class="btn">Check messages</button></a>
+                        <a href="Messages/sendmessage.html"><button type="button" class="btn">Send a message</button></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="info-section-10" class="content-block">
+                <div class="select-resources">
+                    <div class="btns">
+                        <button type="button" class="btn">Internal</button>
+                        <button type="button" class="btn">External</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div id="info-section-11" class="content-block">
+                <div class="select-group-chat">
+                    <div class="btns">
+                        <a href="Group Chat/group.html"><button type="button" class="btn">Access the group chat</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="info-section-12" class="content-block">
+                <div class="select-files">
+                    <div class="btns">
+                        <button type="button" class="btn">Files</button>
+                        <button type="button" class="btn">Add file</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="info-section-13" class="content-block">
+                <div class="select-log-out">
+                    <div class="btns">
+                        <h4 style="text-align: center;font-size: 50px;">Do you want to log out?</h4>
+                    </div>
+
+                    <div class="btns">
+                        <a href="https://aimojohannesburg.co.za"><button type="button" class="btn" style="height: 40px;">YES</button></a>
+                       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+<script src="manager.js"></script>
+</body>
+</html>
