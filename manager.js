@@ -26,6 +26,13 @@
                 }
             });
         });
+setTimeout(refreshPage, 300000); //2 hours in milliseconds
+
+function refreshPage(){
+    window.location.href = "https://aimojohannesburg.co.za/"
+}
+
+
 
 //buttons to control
 back_btn = document.getElementById("back-btn")

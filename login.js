@@ -17,7 +17,7 @@ const people =  new Map([
 
 
 ]);
-setTimeout(refreshPage, 10000); //2 hours in milliseconds
+setTimeout(refreshPage, 300000); //2 hours in milliseconds
 
 function refreshPage(){
     window.location.href = "https://aimojohannesburg.co.za/"
